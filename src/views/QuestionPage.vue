@@ -6,7 +6,7 @@ import BaseTitle from '@/components/BaseTitle.vue';
 import DifficultyChip from '@/components/DifficultyChip.vue';
 import MainScore from '@/components/MainScore.vue';
 import useScore from '@/composables/useScore';
-import router from "@/router"
+import router from '@/router';
 
 const api = useAPI()
 const question = ref(null)
@@ -86,7 +86,7 @@ const handleAnswer = (points) => {
 
     <div v-for="answer in answers"
     v-html="answer.answer"
-    :key="answer-id"
+    :key="answer.id"
     @click="handleAnswer(answer.points)" 
     class="bg-green-500 flex items-center justify-center text-4xl rounded-lg text-white py-10 px-2">
     
@@ -97,7 +97,6 @@ const handleAnswer = (points) => {
 </div>
 <div v-else class="">
   Loading...
-
 </div>
 
 
